@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ENkak — Cart</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body class="bg-[#F3EDE2] text-[#2B2320] overflow-x-hidden" style="font-family: Arial, 'Times New Roman', serif;">
+
+  <header class="flex items-center justify-between px-4 sm:px-6 md:px-10 py-4 sm:py-5 border-b border-[#D8C9B4]">
+    <div class="text-[22px] sm:text-[26px] font-bold tracking-wide">ENkak</div>
+    <button class="bg-orange-200 p-2">Your Cart</button>
+  </header>
+
+  <main class="px-4 sm:px-6 md:px-10 pt-6 sm:pt-8 pb-12 flex flex-col lg:flex-row gap-6 lg:gap-7 items-start">
+
+    <section aria-label="Cart items" class="flex-[2_1_420px] min-w-0 w-full flex flex-col gap-3.5">
+
+      <article class="flex items-center gap-3 sm:gap-4 bg-white border border-[#D8C9B4] rounded-2xl p-3.5">
+        <div class="w-16 h-16 rounded-lg bg-[#E9B78C] flex-shrink-0"></div>
+        <div class="flex-1 min-w-0">
+          <h3 class="text-[15px] font-bold truncate">Jollof Rice</h3>
+          <p class="font-sans text-xs text-[#8A7D6E] mt-0.5">₦1,500 each</p>
+          <button type="button"
+            class="font-sans text-[11px] text-[#2B2320] bg-none border-none p-0 mt-1.5 cursor-pointer transition-opacity duration-150 hover:opacity-60">Remove</button>
+        </div>
+        <div class="font-sans flex items-center gap-2.5">
+          <button type="button" aria-label="Decrease quantity"
+            class="inline-flex items-center justify-center w-[26px] h-[26px] rounded-full border border-[#D8C9B4] bg-[#F3EDE2] text-sm leading-none cursor-pointer transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9]">–</button>
+          <span class="text-sm min-w-[14px] text-center">2</span>
+          <button type="button" aria-label="Increase quantity"
+            class="inline-flex items-center justify-center w-[26px] h-[26px] rounded-full border border-[#D8C9B4] bg-[#F3EDE2] text-sm leading-none cursor-pointer transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9]">+</button>
+        </div>
+        <div class="font-bold text-[15px] min-w-[60px] sm:min-w-[70px] text-right">₦3,000</div>
+      </article>
+
+      <article class="flex items-center gap-3 sm:gap-4 bg-white border border-[#D8C9B4] rounded-2xl p-3.5">
+        <div class="w-16 h-16 rounded-lg bg-[#D99A6C] flex-shrink-0"></div>
+        <div class="flex-1 min-w-0">
+          <h3 class="text-[15px] font-bold truncate">Grilled Chicken</h3>
+          <p class="font-sans text-xs text-[#8A7D6E] mt-0.5">₦2,200 each</p>
+          <button type="button"
+            class="font-sans text-[11px] text-[#2B2320] bg-none border-none p-0 mt-1.5 cursor-pointer transition-opacity duration-150 hover:opacity-60">Remove</button>
+        </div>
+        <div class="font-sans flex items-center gap-2.5">
+          <button type="button" aria-label="Decrease quantity"
+            class="inline-flex items-center justify-center w-[26px] h-[26px] rounded-full border border-[#D8C9B4] bg-[#F3EDE2] text-sm leading-none cursor-pointer transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9]">–</button>
+          <span class="text-sm min-w-[14px] text-center">1</span>
+          <button type="button" aria-label="Increase quantity"
+            class="inline-flex items-center justify-center w-[26px] h-[26px] rounded-full border border-[#D8C9B4] bg-[#F3EDE2] text-sm leading-none cursor-pointer transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9]">+</button>
+        </div>
+        <div class="font-bold text-[15px] min-w-[60px] sm:min-w-[70px] text-right">₦2,200</div>
+      </article>
+
+      <article class="flex items-center gap-3 sm:gap-4 bg-white border border-[#D8C9B4] rounded-2xl p-3.5">
+        <div class="w-16 h-16 rounded-lg bg-[#C9565A] flex-shrink-0"></div>
+        <div class="flex-1 min-w-0">
+          <h3 class="text-[15px] font-bold truncate">Chapman</h3>
+          <p class="font-sans text-xs text-[#8A7D6E] mt-0.5">₦900 each</p>
+          <button type="button"
+            class="font-sans text-[11px] text-[#2B2320] bg-none border-none p-0 mt-1.5 cursor-pointer transition-opacity duration-150 hover:opacity-60">Remove</button>
+        </div>
+        <div class="font-sans flex items-center gap-2.5">
+          <button type="button" aria-label="Decrease quantity"
+            class="inline-flex items-center justify-center w-[26px] h-[26px] rounded-full border border-[#D8C9B4] bg-[#F3EDE2] text-sm leading-none cursor-pointer transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9]">–</button>
+          <span class="text-sm min-w-[14px] text-center">1</span>
+          <button type="button" aria-label="Increase quantity"
+            class="inline-flex items-center justify-center w-[26px] h-[26px] rounded-full border border-[#D8C9B4] bg-[#F3EDE2] text-sm leading-none cursor-pointer transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9]">+</button>
+        </div>
+        <div class="font-bold text-[15px] min-w-[60px] sm:min-w-[70px] text-right">₦900</div>
+      </article>
+
+    </section>
+
+    <aside aria-label="Order summary"
+      class="flex-[1_1_280px] min-w-0 w-full lg:sticky lg:top-5 bg-white border border-[#D8C9B4] rounded-2xl p-5 sm:p-6">
+      <h2 class="text-base font-bold mb-3.5">Order Summary</h2>
+      <div class="font-sans flex flex-col gap-2.5 text-sm">
+        <div class="flex justify-between text-[#5C5248]"><span>Subtotal</span><span>₦6,100</span></div>
+        <div class="flex justify-between text-[#5C5248]"><span>Delivery fee</span><span>₦500</span></div>
+        <div class="h-px bg-[#D8C9B4] my-1"></div>
+        <div class="flex justify-between font-bold text-base"><span>Total</span><span>₦6,600</span></div>
+      </div>
+      <button type="button"
+        class="font-sans w-full mt-4.5 bg-[#2B2320] text-[#F3EDE2] border-none py-3.5 rounded-lg text-[15px] font-semibold cursor-pointer transition-opacity duration-150 hover:opacity-85">
+        Proceed to Checkout
+      </button>
+    </aside>
+
+  </main>
+
+</body>
+
+</html>

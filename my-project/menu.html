@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ENkak — Menu</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body class="bg-[#F3EDE2] text-[#2B2320] overflow-x-hidden" style="font-family: Arial, 'Times New Roman', serif;">
+
+  <header class="flex items-center justify-between px-4 sm:px-6 md:px-10 py-4 sm:py-5 border-b border-[#D8C9B4]">
+    <div class="text-[22px] sm:text-[26px] font-bold tracking-wide">ENkak</div>
+    <button type="button"
+      class="font-sans flex items-center gap-2 bg-[#D99A6C] text-[#2B2320] border border-[#D8C9B4] px-4 sm:px-4.5 py-2.5 rounded-full text-sm transition-all duration-150 hover:opacity-70 cursor-pointer">
+      <span>Cart</span>
+      <span class="bg-[#2B2320] text-[#F3EDE2] rounded-full w-5 h-5 flex items-center justify-center text-xs">3</span>
+    </button>
+  </header>
+
+  <nav aria-label="Menu categories" class="font-sans flex gap-2.5 px-4 sm:px-6 md:px-10 pt-5 flex-wrap">
+    <button type="button"
+      class="bg-[#D99A6C] text-[#2B2320] border-none px-4 py-2.5 rounded-full text-sm transition-all duration-150 hover:opacity-70 cursor-pointer">All</button>
+    <button type="button"
+      class="bg-[#D99A6C] text-[#2B2320] border-none px-4 py-2.5 rounded-full text-sm transition-all duration-150 hover:opacity-70 cursor-pointer">Food</button>
+    <button type="button"
+      class="bg-[#D99A6C] text-[#2B2320] border-none px-4 py-2.5 rounded-full text-sm transition-all duration-150 hover:opacity-70  cursor-pointer">Drinks</button>
+    <button type="button"
+      class="bg-[#D99A6C] text-[#2B2320] border-none px-4 py-2.5 rounded-full text-sm transition-all duration-150 hover:opacity-70  cursor-pointer">Snacks</button>
+  </nav>
+
+  <main class="px-4 sm:px-6 md:px-10 pt-6 pb-12 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+
+    <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+      <div class="h-[110px] bg-[#D99A6C]">
+        <!-- <img src="" alt="Jollof Rice"> -->
+      </div>
+      <div class="p-3.5 flex flex-col gap-2 flex-1">
+        <h3 class="text-base font-bold">Jollof Rice</h3>
+        <div class="font-sans text-xs text-[#8A7D6E]">Food · ★ 4.6</div>
+        <div class="flex-1"></div>
+        <div class="font-sans flex items-center justify-between">
+          <span class="font-bold text-[15px]">₦1,500</span>
+          <button type="button"
+            class="bg-[#D99A6C] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+      <div class="h-[110px] bg-[#D99A6C]"></div>
+      <div class="p-3.5 flex flex-col gap-2 flex-1">
+        <h3 class="text-base font-bold">Grilled Chicken</h3>
+        <div class="font-sans text-xs text-[#8A7D6E]">Food · ★ 4.8</div>
+        <div class="flex-1"></div>
+        <div class="font-sans flex items-center justify-between">
+          <span class="font-bold text-[15px]">₦2,200</span>
+          <button type="button"
+            class="bg-[#D99A6C] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col opacity-50">
+      <div class="h-[110px] bg-[#E3C08A] relative">
+        <div
+          class="font-sans absolute top-2.5 right-2.5 bg-[#D99A6C]text-[#F3EDE2] text-[11px] px-2.5 py-1 rounded-full">
+          Not Available</div>
+      </div>
+      <div class="p-3.5 flex flex-col gap-2 flex-1">
+        <h3 class="text-base font-bold">Fried Rice</h3>
+        <div class="font-sans text-xs text-[#8A7D6E]">Food · ★ 4.4</div>
+        <div class="flex-1"></div>
+        <div class="font-sans flex items-center justify-between">
+          <span class="font-bold text-[15px]">₦1,500</span>
+          <button type="button" disabled
+            class="bg-[#D99A6C] text-[#8A7D6E] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold cursor-not-allowed">Unavailable</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+      <div class="h-[110px] bg-[#D99A6C]"></div>
+      <div class="p-3.5 flex flex-col gap-2 flex-1">
+        <h3 class="text-base font-bold">Egusi Soup</h3>
+        <div class="font-sans text-xs text-[#8A7D6E]">Food · ★ 4.7</div>
+        <div class="flex-1"></div>
+        <div class="font-sans flex items-center justify-between">
+          <span class="font-bold text-[15px]">₦1,800</span>
+          <button type="button"
+            class="bg-[#D99A6C] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+      <div class="h-[110px] bg-[#D99A6C]"></div>
+      <div class="p-3.5 flex flex-col gap-2 flex-1">
+        <h3 class="text-base font-bold">Chapman</h3>
+        <div class="font-sans text-xs text-[#8A7D6E]">Drinks · ★ 4.5</div>
+        <div class="flex-1"></div>
+        <div class="font-sans flex items-center justify-between">
+          <span class="font-bold text-[15px]">₦800</span>
+          <button type="button"
+            class="bg-[#D99A6C] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+      <div class="h-[110px] bg-[#D99A6C]"></div>
+      <div class="p-3.5 flex flex-col gap-2 flex-1">
+        <h3 class="text-base font-bold">Zobo</h3>
+        <div class="font-sans text-xs text-[#8A7D6E]">Drinks · ★ 4.3</div>
+        <div class="flex-1"></div>
+        <div class="font-sans flex items-center justify-between">
+          <span class="font-bold text-[15px]">₦600</span>
+          <button type="button"
+            class="bg-[#D99A6C] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+      <div class="h-[110px] bg-[#D99A6C]"></div>
+      <div class="p-3.5 flex flex-col gap-2 flex-1">
+        <h3 class="text-base font-bold">Bottled Water</h3>
+        <div class="font-sans text-xs text-[#8A7D6E]">Drinks · ★ 4.9</div>
+        <div class="flex-1"></div>
+        <div class="font-sans flex items-center justify-between">
+          <span class="font-bold text-[15px]">₦300</span>
+          <button type="button"
+            class="bg-[#D99A6C] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+      <div class="h-[110px] bg-[#D99A6C]"></div>
+      <div class="p-3.5 flex flex-col gap-2 flex-1">
+        <h3 class="text-base font-bold">Meat Pie</h3>
+        <div class="font-sans text-xs text-[#8A7D6E]">Snacks · ★ 4.2</div>
+        <div class="flex-1"></div>
+        <div class="font-sans flex items-center justify-between">
+          <span class="font-bold text-[15px]">₦500</span>
+          <button type="button"
+            class="bg-[#D99A6C] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+</body>
+
+</html>
