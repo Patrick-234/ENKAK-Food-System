@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ENkak — Admin Dashboard</title>
+<link rel="stylesheet" href="/src/style.css">
+</head>
+<body class="bg-[#F3EDE2] text-[#2B2320] overflow-x-hidden" style="font-family: Georgia, 'Times New Roman', serif;">
+
+  <header class="flex items-center justify-between px-4 sm:px-6 md:px-10 py-4 sm:py-5 border-b border-[#D8C9B4]">
+    <div class="text-[22px] sm:text-[26px] font-bold tracking-wide">ENkak</div>
+    <div class="font-sans text-sm text-[#8A7D6E]">Admin Dashboard</div>
+  </header>
+
+  <main class="px-4 sm:px-6 md:px-10 pt-6 pb-12 flex flex-col gap-4">
+    <h1 class="text-lg font-bold">Orders</h1>
+
+    <ul class="list-none m-0 p-0 flex flex-col gap-4">
+
+      <li class="bg-white border border-[#D8C9B4] rounded-2xl p-4 sm:p-4.5 flex flex-col gap-3" data-order-id="1040">
+        <div class="flex justify-between items-start flex-wrap gap-2">
+          <div>
+            <h2 class="font-bold text-[15px]">Order #1040 · Tolu Bankole</h2>
+            <p class="font-sans text-xs text-[#8A7D6E] mt-0.5">2 items · ₦3,900</p>
+          </div>
+          <span class="font-sans text-[11px] font-semibold px-2.5 py-1 rounded-full bg-[#FBEAE6] text-[#A33B2B]">Payment Pending</span>
+        </div>
+        <div class="font-sans flex gap-3.5 flex-wrap items-end">
+          <label class="flex flex-col gap-1 text-[11px] text-[#8A7D6E]">Order status
+            <select class="text-[13px] px-2.5 py-1.5 rounded-lg border border-[#D8C9B4] bg-white">
+              <option>Confirmed</option>
+              <option>Preparing</option>
+              <option>Out for Delivery</option>
+              <option>Delivered</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-1 text-[11px] text-[#8A7D6E]">Assign rider
+            <select class="text-[13px] px-2.5 py-1.5 rounded-lg border border-[#D8C9B4] bg-white">
+              <option>Unassigned</option>
+              <option>Emeka O.</option>
+              <option>Blessing A.</option>
+            </select>
+          </label>
+          <button type="button" class="bg-[#2B2320] text-[#F3EDE2] border-none px-4 py-2 rounded-lg text-[13px] font-semibold cursor-pointer transition-opacity duration-150 hover:opacity-85">Confirm Payment</button>
+        </div>
+      </li>
+
+      <li class="bg-white border border-[#D8C9B4] rounded-2xl p-4 sm:p-4.5 flex flex-col gap-3" data-order-id="1041">
+        <div class="flex justify-between items-start flex-wrap gap-2">
+          <div>
+            <h2 class="font-bold text-[15px]">Order #1041 · Chidi Okafor</h2>
+            <p class="font-sans text-xs text-[#8A7D6E] mt-0.5">3 items · ₦6,600</p>
+          </div>
+          <span class="font-sans text-[11px] font-semibold px-2.5 py-1 rounded-full bg-[#E6F2E9] text-[#2F6B4F]">Paid</span>
+        </div>
+        <div class="font-sans flex gap-3.5 flex-wrap items-end">
+          <label class="flex flex-col gap-1 text-[11px] text-[#8A7D6E]">Order status
+            <select class="text-[13px] px-2.5 py-1.5 rounded-lg border border-[#D8C9B4] bg-white">
+              <option>Confirmed</option>
+              <option selected>Preparing</option>
+              <option>Out for Delivery</option>
+              <option>Delivered</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-1 text-[11px] text-[#8A7D6E]">Assign rider
+            <select class="text-[13px] px-2.5 py-1.5 rounded-lg border border-[#D8C9B4] bg-white">
+              <option>Unassigned</option>
+              <option>Emeka O.</option>
+              <option>Blessing A.</option>
+            </select>
+          </label>
+        </div>
+      </li>
+
+      <li class="bg-white border border-[#D8C9B4] rounded-2xl p-4 sm:p-4.5 flex flex-col gap-3" data-order-id="1039">
+        <div class="flex justify-between items-start flex-wrap gap-2">
+          <div>
+            <h2 class="font-bold text-[15px]">Order #1039 · Zainab Musa</h2>
+            <p class="font-sans text-xs text-[#8A7D6E] mt-0.5">1 item · ₦1,800</p>
+          </div>
+          <span class="font-sans text-[11px] font-semibold px-2.5 py-1 rounded-full bg-[#E6F2E9] text-[#2F6B4F]">Paid</span>
+        </div>
+        <div class="font-sans flex gap-3.5 flex-wrap items-end">
+          <label class="flex flex-col gap-1 text-[11px] text-[#8A7D6E]">Order status
+            <select class="text-[13px] px-2.5 py-1.5 rounded-lg border border-[#D8C9B4] bg-white">
+              <option>Confirmed</option>
+              <option>Preparing</option>
+              <option selected>Out for Delivery</option>
+              <option>Delivered</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-1 text-[11px] text-[#8A7D6E]">Assign rider
+            <select class="text-[13px] px-2.5 py-1.5 rounded-lg border border-[#D8C9B4] bg-white">
+              <option>Unassigned</option>
+              <option selected>Emeka O.</option>
+              <option>Blessing A.</option>
+            </select>
+          </label>
+        </div>
+      </li>
+
+      <li class="bg-white border border-[#D8C9B4] rounded-2xl p-4 sm:p-4.5 flex flex-col gap-3" data-order-id="1037">
+        <div class="flex justify-between items-start flex-wrap gap-2">
+          <div>
+            <h2 class="font-bold text-[15px]">Order #1037 · Femi Adelake</h2>
+            <p class="font-sans text-xs text-[#8A7D6E] mt-0.5">4 items · ₦8,100</p>
+          </div>
+          <span class="font-sans text-[11px] font-semibold px-2.5 py-1 rounded-full bg-[#E6F2E9] text-[#2F6B4F]">Paid</span>
+        </div>
+        <div class="font-sans flex gap-3.5 flex-wrap items-end">
+          <label class="flex flex-col gap-1 text-[11px] text-[#8A7D6E]">Order status
+            <select class="text-[13px] px-2.5 py-1.5 rounded-lg border border-[#D8C9B4] bg-white">
+              <option>Confirmed</option>
+              <option>Preparing</option>
+              <option>Out for Delivery</option>
+              <option selected>Delivered</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-1 text-[11px] text-[#8A7D6E]">Assign rider
+            <select class="text-[13px] px-2.5 py-1.5 rounded-lg border border-[#D8C9B4] bg-white">
+              <option>Unassigned</option>
+              <option>Emeka O.</option>
+              <option selected>Blessing A.</option>
+            </select>
+          </label>
+        </div>
+      </li>
+
+    </ul>
+  </main>
+
+</body>
+</html>

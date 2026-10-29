@@ -11,8 +11,18 @@
 <body class="bg-[#F3EDE2] text-[#2B2320] overflow-x-hidden" style="font-family: Arial, 'Times New Roman', serif;">
 
   <header class="flex items-center justify-between px-4 sm:px-6 md:px-10 py-4 sm:py-5 border-b border-[#D8C9B4]">
-    <div class="text-[22px] sm:text-[26px] font-bold tracking-wide">ENkak</div>
-    <button class="bg-orange-200 p-2">Your Cart</button>
+    <div class="text-[22px] sm:text-[26px] font-bold tracking-tight">ENkak</div>
+    <button type="button"
+      class="flex items-center gap-2 bg-[#B4502A] text-[#F3EDE2]   border border-[#D8C9B4] px-3.5 py-2 md:px-4 md:py-2.5 rounded-full text-sm transition-all duration-150 hover:opacity-70  cursor-pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        aria-hidden="true">
+        <circle cx="9" cy="21" r="1" />
+        <circle cx="20" cy="21" r="1" />
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+      </svg>
+      <span>Cart</span>
+      <span class="bg-[#2B2320] text-[#F3EDE2] rounded-full w-5 h-5 flex items-center justify-center text-xs">3</span>
+    </button>
   </header>
 
   <main class="px-4 sm:px-6 md:px-10 pt-6 sm:pt-8 pb-12 flex flex-col lg:flex-row gap-6 lg:gap-7 items-start">
@@ -20,7 +30,7 @@
     <section aria-label="Cart items" class="flex-[2_1_420px] min-w-0 w-full flex flex-col gap-3.5">
 
       <article class="flex items-center gap-3 sm:gap-4 bg-white border border-[#D8C9B4] rounded-2xl p-3.5">
-        <div class="w-16 h-16 rounded-lg bg-[#E9B78C] flex-shrink-0"></div>
+        <div class="w-16 h-16 rounded-lg bg-contain bg-center bg-no-repeat flex-shrink-0" style="background-image: url(./Jollof-rice.jpg);"></div>
         <div class="flex-1 min-w-0">
           <h3 class="text-[15px] font-bold truncate">Jollof Rice</h3>
           <p class="font-sans text-xs text-[#8A7D6E] mt-0.5">₦1,500 each</p>
@@ -38,7 +48,7 @@
       </article>
 
       <article class="flex items-center gap-3 sm:gap-4 bg-white border border-[#D8C9B4] rounded-2xl p-3.5">
-        <div class="w-16 h-16 rounded-lg bg-[#D99A6C] flex-shrink-0"></div>
+        <div class="w-16 h-16 rounded-lg bg-cover bg-no-repeat bg-center flex-shrink-0"style="background-image: url(/Grilled-chicken.jpg);"></div>
         <div class="flex-1 min-w-0">
           <h3 class="text-[15px] font-bold truncate">Grilled Chicken</h3>
           <p class="font-sans text-xs text-[#8A7D6E] mt-0.5">₦2,200 each</p>
@@ -56,7 +66,7 @@
       </article>
 
       <article class="flex items-center gap-3 sm:gap-4 bg-white border border-[#D8C9B4] rounded-2xl p-3.5">
-        <div class="w-16 h-16 rounded-lg bg-[#C9565A] flex-shrink-0"></div>
+        <div class="w-16 h-16 rounded-lg  flex-shrink-0" ></div>
         <div class="flex-1 min-w-0">
           <h3 class="text-[15px] font-bold truncate">Chapman</h3>
           <p class="font-sans text-xs text-[#8A7D6E] mt-0.5">₦900 each</p>
@@ -85,7 +95,7 @@
         <div class="flex justify-between font-bold text-base"><span>Total</span><span>₦6,600</span></div>
       </div>
       <button type="button"
-        class="font-sans w-full mt-4.5 bg-[#2B2320] text-[#F3EDE2] border-none py-3.5 rounded-lg text-[15px] font-semibold cursor-pointer transition-opacity duration-150 hover:opacity-85">
+        class="font-sans w-full mt-4.5 bg-[#D99A6C]  text-[#F3EDE2] border-none py-3.5 rounded-lg text-[15px] font-semibold cursor-pointer transition-opacity duration-150 hover:opacity-85">
         Proceed to Checkout
       </button>
     </aside>
