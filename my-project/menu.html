@@ -6,41 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ENkak — Menu</title>
   <link rel="stylesheet" href="/src/style.css">
-  <!-- <style>
+  <style>
     html {
       scroll-behavior: smooth
     }
-  </style> -->
+  </style>
 </head>
 
-<body class="bg-[#F3EDE2] text-[#2B2320] overflow-x-hidden" style="font-family: Arial, Georgia, 'Times New Roman', serif;">
+<body class="bg-[#F3EDE2] text-[#2B2320] overflow-x-hidden"
+  style="font-family: Arial, Georgia, 'Times New Roman', serif;">
 
   <header class="flex items-center justify-between px-4 sm:px-6 md:px-10 py-4 sm:py-5 border-b border-[#D8C9B4]">
     <div class="text-xl sm:text-[26px] font-bold tracking-tight">ENkak</div>
-    <button type="button"
-      class="flex items-center gap-2 bg-[#B4502A] text-[#F3EDE2]   border border-[#D8C9B4] px-3.5 py-2 md:px-4 md:py-2.5 rounded-full text-sm transition-all duration-150 hover:opacity-70  cursor-pointer">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        aria-hidden="true">
-        <circle cx="9" cy="21" r="1" />
-        <circle cx="20" cy="21" r="1" />
-        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-      </svg>
-      <span>Cart</span>
-      <span class="bg-[#2B2320] text-[#F3EDE2] rounded-full w-5 h-5 flex items-center justify-center text-xs">3</span>
-    </button>
+    <a href="./cart.html" target="_blank">
+      <button type="button"
+        class="flex items-center gap-2 bg-[#B4502A] text-[#F3EDE2]   border border-[#D8C9B4] px-3.5 py-2 md:px-4 md:py-2.5 rounded-full text-sm transition-all duration-150 hover:opacity-70  cursor-pointer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          aria-hidden="true">
+          <circle cx="9" cy="21" r="1" />
+          <circle cx="20" cy="21" r="1" />
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+        </svg>
+        <span>Cart</span>
+        <span class="bg-[#2B2320] text-[#F3EDE2] rounded-full w-5 h-5 flex items-center justify-center text-xs">3</span>
+      </button>
+    </a>
+
   </header>
 
   <!-- Greeting (shown once logged in) -->
   <div class="font-sans px-4 sm:px-6 md:px-10 pt-4">
-    <p id="greeting" class="text-base sm:text-[17px] font-medium tracking-tight md:tracking normal"><span class="text-3xl md:text-5xl tracking-tight md:tracking-normal font-serif">Hello</span>, Ada Lovelace</p>
+    <p id="greeting" class="text-base sm:text-[17px] font-medium tracking-tight md:tracking normal"><span
+        class="text-3xl md:text-5xl tracking-tight md:tracking-normal font-serif">Hello</span>, Ada Lovelace</p>
   </div>
 
   <!-- Search -->
   <search class="flex justify-center px-4 sm:px-6 md:px-10 pt-3.5 ">
     <!-- <label for="menu-search" class="search-only">Search the menu</label> -->
     <input id="menu-search" type="search" placeholder="Food, Snacks and drinks"
-    class="w-full  box-border px-4 py-3 rounded-full border border-[#D8C9B4] bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2B2320]"
-    >
+      class="w-full  box-border px-4 py-3 rounded-full border border-[#D8C9B4] bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2B2320]">
   </search>
 
   <!-- Section jump nav -->
@@ -60,7 +64,8 @@
       <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
 
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px]  bg-cover bg-no-repeat bg-center" style="background-image: url('/Fried-rice.jpg'); "></div>
+          <div class="h-[160px]  bg-cover bg-no-repeat bg-center"
+            style="background-image: url('./Thumbnails/Fried-rice.jpg'); "></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Fried Rice</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.6</div>
@@ -74,7 +79,8 @@
         </article>
 
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-cover bg-no-repeat "style="background-image: url('/Grilled-chicken.jpg'); "></div>
+          <div class="h-[160px] bg-cover bg-no-repeat "
+            style="background-image: url('./Thumbnails/Grilled-chicken.jpg'); "></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Roasted Chicken</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.8</div>
@@ -88,7 +94,8 @@
         </article>
 
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col opacity-50">
-          <div class="h-[110px] bg-cover bg-center bg-no-repeat relative" style="background-image: url(./Jollof-rice.jpg);">
+          <div class="h-[160px] bg-cover bg-center bg-no-repeat relative"
+            style="background-image: url(./Thumbnails/Jollof-rice.jpg);">
             <div
               class="font-sans absolute top-2.5 right-2.5 bg-[#2B2320] text-[#F3EDE2] text-[11px] px-2.5 py-1 rounded-full">
               Not Available
@@ -107,7 +114,8 @@
         </article>
 
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-1/2 bg-cover bg-center bg-no-repeat" style="background-image: url(./Egusi.jpg);"></div>
+          <div class="h-[160px] bg-cover bg-center bg-no-repeat" style="background-image: url(./Thumbnails/Egusi.jpg);">
+          </div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Egusi Soup</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
@@ -120,7 +128,8 @@
           </div>
         </article>
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-cover bg-center bg-no-repeat" style="background-image: url(./Afang.jpg);"></div>
+          <div class="h-[160px] bg-cover bg-center bg-no-repeat" style="background-image: url(./Thumbnails/Afang.jpg);">
+          </div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Afang Soup</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
@@ -133,7 +142,8 @@
           </div>
         </article>
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-cover bg-center bg-no-repeat" style="background-image: url(./Chicken-pepper-soup.jpg);"></div>
+          <div class="h-[160px] bg-cover bg-center bg-no-repeat"
+            style="background-image: url(./Thumbnails/Chicken-pepper-soup.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Chicken Peppersoup</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
@@ -146,7 +156,8 @@
           </div>
         </article>
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-cover bg-center bg-no-repeat" style="background-image: url(./Goat-meat-peppersoup.jpg);"></div>
+          <div class="h-[160px] bg-cover bg-center bg-no-repeat"
+            style="background-image: url(./Thumbnails/Goat-meat-peppersoup.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Goatmeat peppersoup</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
@@ -159,7 +170,8 @@
           </div>
         </article>
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-cover bg-center bg-no-repeat" style="background-image: url(./grilled-roasted-chicken.jpg);"></div>
+          <div class="h-[160px] bg-cover bg-center bg-no-repeat"
+            style="background-image: url(./Thumbnails/grilled-roasted-chicken.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Grilled Chicken</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
@@ -172,7 +184,8 @@
           </div>
         </article>
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-cover bg-center bg-no-repeat" style="background-image: url(./Amala\ and\ ewedu.jpg);"></div>
+          <div class="h-[160px] bg-cover bg-center bg-no-repeat"
+            style="background-image: url(./Thumbnails/Amala\ and\ ewedu.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Amala and Ewedu</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
@@ -185,9 +198,10 @@
           </div>
         </article>
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-cover bg-center bg-no-repeat" style="background-image: url(./Egusi.jpg);"></div>
+          <div class="h-[160px] bg-cover bg-center bg-no-repeat"
+            style="background-image: url(./Thumbnails/Porridge\ plantain.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
-            <h3 class="text-base font-bold">Egusi Soup</h3>
+            <h3 class="text-base font-bold">Plaintain Pottage</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
@@ -198,7 +212,8 @@
           </div>
         </article>
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-cover bg-no-repeat bg-center bg-no-repeat" style="background-image: url(./Banga.jpg);"></div>
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center bg-no-repeat"
+            style="background-image: url(./Thumbnails/Banga.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Banga</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
@@ -211,7 +226,8 @@
           </div>
         </article>
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-cover bg-center bg-no-repeat" style="background-image: url(./Beans.jpg);"></div>
+          <div class="h-[160px] bg-cover bg-center bg-no-repeat" style="background-image: url(./Thumbnails/Beans.jpg);">
+          </div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Beans</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
@@ -219,7 +235,8 @@
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦1,800</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
             </div>
           </div>
         </article>
@@ -232,7 +249,8 @@
       <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
 
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-[#C9565A]"></div>
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./Thumbnails/Chapman.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Chapman</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.5</div>
@@ -240,13 +258,15 @@
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦800</span>
               <button type="button"
-                class="bg-[#F3EDE2] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
             </div>
           </div>
         </article>
 
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-[#8B3A4A]"></div>
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center" style="background-image: url(./Thumbnails/Zobo.jpg);">
+          </div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Zobo</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.3</div>
@@ -254,13 +274,15 @@
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦600</span>
               <button type="button"
-                class="bg-[#F3EDE2] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
             </div>
           </div>
         </article>
 
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-[#6FA8C0]"></div>
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center" style="background-image: url(./Thumbnails/Water.jpg);">
+          </div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Bottled Water</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.9</div>
@@ -268,12 +290,14 @@
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦500</span>
               <button type="button"
-                class="bg-[#F3EDE2] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
             </div>
           </div>
         </article>
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-[#6FA8C0]"></div>
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./Thumbnails/Piineapple-juice.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Pineapple Juice</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.9</div>
@@ -281,12 +305,14 @@
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦500</span>
               <button type="button"
-                class="bg-[#F3EDE2] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
             </div>
           </div>
         </article>
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-[#6FA8C0]"></div>
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./Thumbnails/Orange.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Orange Juice</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.9</div>
@@ -294,20 +320,53 @@
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦500</span>
               <button type="button"
-                class="bg-[#F3EDE2] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
             </div>
           </div>
         </article>
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-[#6FA8C0]"></div>
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./Thumbnails/Apple-juice.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
-            <h3 class="text-base font-bold">Glucosed water</h3>
+            <h3 class="text-base font-bold">Apple Juice</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.9</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦500</span>
               <button type="button"
-                class="bg-[#F3EDE2] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./Thumbnails/Tigernut.jpg);"></div>
+          <div class="p-3.5 flex flex-col gap-2 flex-1">
+            <h3 class="text-base font-bold">Tiger Nut</h3>
+            <div class="font-sans text-xs text-[#8A7D6E]">★ 4.9</div>
+            <div class="flex-1"></div>
+            <div class="font-sans flex items-center justify-between">
+              <span class="font-bold text-[15px]">₦500</span>
+              <button type="button"
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center" style="background-image: url(./Thumbnails/Kunu.jpg);">
+          </div>
+          <div class="p-3.5 flex flex-col gap-2 flex-1">
+            <h3 class="text-base font-bold">Kunu</h3>
+            <div class="font-sans text-xs text-[#8A7D6E]">★ 4.9</div>
+            <div class="flex-1"></div>
+            <div class="font-sans flex items-center justify-between">
+              <span class="font-bold text-[15px]">₦500</span>
+              <button type="button"
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
             </div>
           </div>
         </article>
@@ -320,7 +379,8 @@
       <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
 
         <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
-          <div class="h-[110px] bg-[#CBA36A]"></div>
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./Thumbnails/Meatpie.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
             <h3 class="text-base font-bold">Meat Pie</h3>
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
@@ -328,7 +388,113 @@
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦500</span>
               <button type="button"
-                class="bg-[#F3EDE2] text-[#2B2320] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./Thumbnails/Doughnut.jpg);"></div>
+          <div class="p-3.5 flex flex-col gap-2 flex-1">
+            <h3 class="text-base font-bold">Doughnut</h3>
+            <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
+            <div class="flex-1"></div>
+            <div class="font-sans flex items-center justify-between">
+              <span class="font-bold text-[15px]">₦500</span>
+              <button type="button"
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./Thumbnails/Croissant.jpg);"></div>
+          <div class="p-3.5 flex flex-col gap-2 flex-1">
+            <h3 class="text-base font-bold">Croissant</h3>
+            <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
+            <div class="flex-1"></div>
+            <div class="font-sans flex items-center justify-between">
+              <span class="font-bold text-[15px]">₦500</span>
+              <button type="button"
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./Thumbnails/Chocolate.jpg);"></div>
+          <div class="p-3.5 flex flex-col gap-2 flex-1">
+            <h3 class="text-base font-bold">Chocolate Cupcake</h3>
+            <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
+            <div class="flex-1"></div>
+            <div class="font-sans flex items-center justify-between">
+              <span class="font-bold text-[15px]">₦500</span>
+              <button type="button"
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+          <div class="h-[160px] bg-bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./Thumbnails/Red-velvet.jpg);"></div>
+          <div class="p-3.5 flex flex-col gap-2 flex-1">
+            <h3 class="text-base font-bold">Red Velvet</h3>
+            <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
+            <div class="flex-1"></div>
+            <div class="font-sans flex items-center justify-between">
+              <span class="font-bold text-[15px]">₦500</span>
+              <button type="button"
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./Thumbnails/Vanilla.jpg);"></div>
+          <div class="p-3.5 flex flex-col gap-2 flex-1">
+            <h3 class="text-base font-bold">Vanilla cake</h3>
+            <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
+            <div class="flex-1"></div>
+            <div class="font-sans flex items-center justify-between">
+              <span class="font-bold text-[15px]">₦500</span>
+              <button type="button"
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./Thumbnails/Fish-roll.jpg);"></div>
+          <div class="p-3.5 flex flex-col gap-2 flex-1">
+            <h3 class="text-base font-bold">Fish Roll</h3>
+            <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
+            <div class="flex-1"></div>
+            <div class="font-sans flex items-center justify-between">
+              <span class="font-bold text-[15px]">₦500</span>
+              <button type="button"
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+          <div class="h-[160px] bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./Thumbnails/Shawarma.jpg);"></div>
+          <div class="p-3.5 flex flex-col gap-2 flex-1">
+            <h3 class="text-base font-bold">Shawarma</h3>
+            <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
+            <div class="flex-1"></div>
+            <div class="font-sans flex items-center justify-between">
+              <span class="font-bold text-[15px]">₦500</span>
+              <button type="button"
+                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+              </button>
             </div>
           </div>
         </article>
