@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ENkak — Menu</title>
+  <title>ENkak &ndash; Menu</title>
   <link rel="stylesheet" href="/src/style.css">
+  <script type="module" src="/src/menu.js" defer></script>
   <style>
     html {
       scroll-behavior: smooth
@@ -14,11 +15,11 @@
 </head>
 
 <body class="bg-[#F3EDE2] text-[#2B2320] overflow-x-hidden"
-  style="font-family: Arial, Georgia, 'Times New Roman', serif;">
+  style="font-family: Arial, 'Times New Roman', serif;">
 
   <header class="flex items-center justify-between px-4 sm:px-6 md:px-10 py-4 sm:py-5 border-b border-[#D8C9B4]">
     <div class="text-xl sm:text-[26px] font-bold tracking-tight">ENkak</div>
-    <a href="./cart.html" target="_blank">
+    <a href="./cart.html">
       <button type="button"
         class="flex items-center gap-2 bg-[#B4502A] text-[#F3EDE2]   border border-[#D8C9B4] px-3.5 py-2 md:px-4 md:py-2.5 rounded-full text-sm transition-all duration-150 hover:opacity-70  cursor-pointer">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -28,7 +29,7 @@
           <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
         </svg>
         <span>Cart</span>
-        <span class="bg-[#2B2320] text-[#F3EDE2] rounded-full w-5 h-5 flex items-center justify-center text-xs">3</span>
+        <span id="cart-badge" class="bg-[#2B2320] text-[#F3EDE2] rounded-full w-5 h-5 flex items-center justify-center text-xs">0</span>
       </button>
     </a>
 
@@ -37,7 +38,7 @@
   <!-- Greeting (shown once logged in) -->
   <div class="font-sans px-4 sm:px-6 md:px-10 pt-4">
     <p id="greeting" class="text-base sm:text-[17px] font-medium tracking-tight md:tracking normal"><span
-        class="text-3xl md:text-5xl tracking-tight md:tracking-normal font-serif">Hello</span>, Ada Lovelace</p>
+        class="text-3xl md:text-5xl tracking-tight md:tracking-normal font-serif">Hello</span>, <span id="user-name">Ada Lovelace</span></p>
   </div>
 
   <!-- Search -->
@@ -61,9 +62,9 @@
 
     <section id="food-section" aria-labelledby="food-heading">
       <h2 id="food-heading" class="text-lg font-bold mb-3.5">Food</h2>
-      <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
 
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="fried-rice" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px]  bg-cover bg-no-repeat bg-center"
             style="background-image: url('./Thumbnails/Fried-rice.jpg'); "></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -71,14 +72,14 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.6</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦1,500</span>
+              <span class="font-bold text-[15px]">₦2,500</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
             </div>
           </div>
         </article>
 
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="roasted-chicken" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat "
             style="background-image: url('./Thumbnails/Grilled-chicken.jpg'); "></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -88,12 +89,12 @@
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦2,200</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
             </div>
           </div>
         </article>
 
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col opacity-50">
+        <article data-item-id="jollof-rice" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col opacity-50">
           <div class="h-[160px] bg-cover bg-center bg-no-repeat relative"
             style="background-image: url(./Thumbnails/Jollof-rice.jpg);">
             <div
@@ -106,14 +107,14 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.4</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦1,500</span>
+              <span class="font-bold text-[15px]">₦2,000</span>
               <button type="button" disabled
                 class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold cursor-not-allowed">Unavailable</button>
             </div>
           </div>
         </article>
 
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="egusi-soup" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-center bg-no-repeat" style="background-image: url(./Thumbnails/Egusi.jpg);">
           </div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -121,13 +122,13 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦1,800</span>
+              <span class="font-bold text-[15px]">₦2,000</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="afang-soup" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-center bg-no-repeat" style="background-image: url(./Thumbnails/Afang.jpg);">
           </div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -135,13 +136,13 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦1,800</span>
+              <span class="font-bold text-[15px]">₦2,000</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="chicken-peppersoup" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-center bg-no-repeat"
             style="background-image: url(./Thumbnails/Chicken-pepper-soup.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -149,13 +150,13 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦1,800</span>
+              <span class="font-bold text-[15px]">₦2,500</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 hover:bg-[#E9DFC9] cursor-pointer">Add</button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="goatmeat-peppersoup" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-center bg-no-repeat"
             style="background-image: url(./Thumbnails/Goat-meat-peppersoup.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -163,13 +164,13 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦1,800</span>
+              <span class="font-bold text-[15px]">₦2,500</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="grilled-chicken" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-center bg-no-repeat"
             style="background-image: url(./Thumbnails/grilled-roasted-chicken.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -177,13 +178,13 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦1,800</span>
+              <span class="font-bold text-[15px]">₦2,000</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="amala-and-ewedu" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-center bg-no-repeat"
             style="background-image: url(./Thumbnails/Amala\ and\ ewedu.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -191,13 +192,13 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦1,800</span>
+              <span class="font-bold text-[15px]">₦2,500</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="plaintain-pottage" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-center bg-no-repeat"
             style="background-image: url(./Thumbnails/Porridge\ plantain.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -207,11 +208,11 @@
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦1,800</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="banga" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center bg-no-repeat"
             style="background-image: url(./Thumbnails/Banga.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -219,13 +220,13 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.7</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦1,800</span>
+              <span class="font-bold text-[15px]">₦2,000</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add</button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="beans" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-center bg-no-repeat" style="background-image: url(./Thumbnails/Beans.jpg);">
           </div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -235,7 +236,7 @@
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦1,800</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
@@ -246,9 +247,9 @@
 
     <section id="drinks-section" aria-labelledby="drinks-heading">
       <h2 id="drinks-heading" class="text-lg font-bold mb-3.5">Drinks</h2>
-      <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md-grid-cols-4 lg:grid-cols-4">
 
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="chapman" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center"
             style="background-image: url(./Thumbnails/Chapman.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -258,13 +259,13 @@
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦800</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
 
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="zobo" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center" style="background-image: url(./Thumbnails/Zobo.jpg);">
           </div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -274,13 +275,13 @@
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦600</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
 
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="bottled-water" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center" style="background-image: url(./Thumbnails/Water.jpg);">
           </div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -290,12 +291,12 @@
             <div class="font-sans flex items-center justify-between">
               <span class="font-bold text-[15px]">₦500</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="pineapple-juice" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center"
             style="background-image: url(./Thumbnails/Piineapple-juice.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -303,14 +304,14 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.9</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦500</span>
+              <span class="font-bold text-[15px]">₦1600</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="orange-juice" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center"
             style="background-image: url(./Thumbnails/Orange.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -318,14 +319,14 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.9</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦500</span>
+              <span class="font-bold text-[15px]">₦1500</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="apple-juice" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center"
             style="background-image: url(./Thumbnails/Apple-juice.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -333,14 +334,14 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.9</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦500</span>
+              <span class="font-bold text-[15px]">₦1600</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="tiger-nut" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center"
             style="background-image: url(./Thumbnails/Tigernut.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -348,14 +349,14 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.9</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦500</span>
+              <span class="font-bold text-[15px]">₦600</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="kunu" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center" style="background-image: url(./Thumbnails/Kunu.jpg);">
           </div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -363,9 +364,9 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.9</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦500</span>
+              <span class="font-bold text-[15px]">₦600</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
@@ -376,9 +377,9 @@
 
     <section id="snacks-section" aria-labelledby="snacks-heading">
       <h2 id="snacks-heading" class="text-lg font-bold mb-3.5">Snacks</h2>
-      <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
 
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="meat-pie" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center"
             style="background-image: url(./Thumbnails/Meatpie.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -386,14 +387,14 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦500</span>
+              <span class="font-bold text-[15px]">₦800</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="doughnut" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center"
             style="background-image: url(./Thumbnails/Doughnut.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -401,14 +402,14 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦500</span>
+              <span class="font-bold text-[15px]">₦600</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="croissant" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center"
             style="background-image: url(./Thumbnails/Croissant.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -416,14 +417,14 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦500</span>
+              <span class="font-bold text-[15px]">₦600</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="chocolate-cupcake" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center"
             style="background-image: url(./Thumbnails/Chocolate.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -431,14 +432,14 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦500</span>
+              <span class="font-bold text-[15px]">₦3,000</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="red-velvet" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-bg-cover bg-no-repeat bg-center"
             style="background-image: url(./Thumbnails/Red-velvet.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -446,14 +447,14 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦500</span>
+              <span class="font-bold text-[15px]">₦3,000</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="vanilla-cake" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center"
             style="background-image: url(./Thumbnails/Vanilla.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -461,14 +462,14 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦500</span>
+              <span class="font-bold text-[15px]">₦3,000</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="fish-roll" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center"
             style="background-image: url(./Thumbnails/Fish-roll.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -476,14 +477,14 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦500</span>
+              <span class="font-bold text-[15px]">₦600</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
         </article>
-        <article class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
+        <article data-item-id="shawarma" class="border border-[#D8C9B4] rounded-2xl overflow-hidden bg-white flex flex-col">
           <div class="h-[160px] bg-cover bg-no-repeat bg-center"
             style="background-image: url(./Thumbnails/Shawarma.jpg);"></div>
           <div class="p-3.5 flex flex-col gap-2 flex-1">
@@ -491,9 +492,9 @@
             <div class="font-sans text-xs text-[#8A7D6E]">★ 4.2</div>
             <div class="flex-1"></div>
             <div class="font-sans flex items-center justify-between">
-              <span class="font-bold text-[15px]">₦500</span>
+              <span class="font-bold text-[15px]">₦3,000</span>
               <button type="button"
-                class="bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
+                class="add-to-cart-btn bg-[#B4502A] text-[#F3EDE2] border border-[#D8C9B4] px-3.5 py-2 rounded-full text-[13px] font-semibold transition-all duration-150 hover:opacity-80 cursor-pointer">Add
               </button>
             </div>
           </div>
