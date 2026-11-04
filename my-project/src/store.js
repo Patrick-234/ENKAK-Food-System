@@ -1,4 +1,4 @@
-// store.js - tiny localStorage-backed "fake backend" for ENkak
+// store.js — tiny localStorage-backed "fake backend" for ENkak
 // Swap these functions for real Supabase calls later; keep the same names
 // in your pages so the switch-over is a find-and-replace, not a rewrite.
 
@@ -51,43 +51,49 @@ export function registerAccount({ name, email, role }) {
   setUser(account);
   return account;
 }
+export function getRiderAccounts() {
+  return getAccounts().filter((a) => a.role === 'rider');
+}
+export function logout() {
+  localStorage.removeItem(KEYS.user);
+}
 
 export const ROLE_REDIRECT = {
   customer: '/menu.html',
-  rider: '/rider/dashboard.html',
-  admin: '/admin/dashboard.html',
+  rider: '/rider-dashboard.html',
+  admin: '/admin-dashboard.html',
 };
 
 // ---- Menu ----
 const DEFAULT_MENU = [
-  { id: 'fried-rice', name: 'Fried Rice', category: 'Food', price: 2500, available: true, image: 'Fried-rice.jpg' },
+  { id: 'fried-rice', name: 'Fried Rice', category: 'Food', price: 1500, available: true, image: 'Fried-rice.jpg' },
   { id: 'roasted-chicken', name: 'Roasted Chicken', category: 'Food', price: 2200, available: true, image: 'Grilled-chicken.jpg' },
-  { id: 'jollof-rice', name: 'Jollof Rice', category: 'Food', price: 2000, available: false, image: 'Jollof-rice.jpg' },
-  { id: 'egusi-soup', name: 'Egusi Soup', category: 'Food', price: 2000, available: true, image: 'Egusi.jpg' },
-  { id: 'afang-soup', name: 'Afang Soup', category: 'Food', price: 2000, available: true, image: 'Afang.jpg' },
-  { id: 'chicken-peppersoup', name: 'Chicken Peppersoup', category: 'Food', price: 2500, available: true, image: 'Chicken-pepper-soup.jpg' },
-  { id: 'goatmeat-peppersoup', name: 'Goatmeat peppersoup', category: 'Food', price: 2500, available: true, image: 'Goat-meat-peppersoup.jpg' },
-  { id: 'grilled-chicken', name: 'Grilled Chicken', category: 'Food', price: 2000, available: true, image: 'grilled-roasted-chicken.jpg' },
-  { id: 'amala-and-ewedu', name: 'Amala and Ewedu', category: 'Food', price: 2500, available: true, image: 'Amala and ewedu.jpg' },
+  { id: 'jollof-rice', name: 'Jollof Rice', category: 'Food', price: 1500, available: false, image: 'Jollof-rice.jpg' },
+  { id: 'egusi-soup', name: 'Egusi Soup', category: 'Food', price: 1800, available: true, image: 'Egusi.jpg' },
+  { id: 'afang-soup', name: 'Afang Soup', category: 'Food', price: 1800, available: true, image: 'Afang.jpg' },
+  { id: 'chicken-peppersoup', name: 'Chicken Peppersoup', category: 'Food', price: 1800, available: true, image: 'Chicken-pepper-soup.jpg' },
+  { id: 'goatmeat-peppersoup', name: 'Goatmeat peppersoup', category: 'Food', price: 1800, available: true, image: 'Goat-meat-peppersoup.jpg' },
+  { id: 'grilled-chicken', name: 'Grilled Chicken', category: 'Food', price: 1800, available: true, image: 'grilled-roasted-chicken.jpg' },
+  { id: 'amala-and-ewedu', name: 'Amala and Ewedu', category: 'Food', price: 1800, available: true, image: 'Amala and ewedu.jpg' },
   { id: 'plaintain-pottage', name: 'Plaintain Pottage', category: 'Food', price: 1800, available: true, image: 'Porridge plantain.jpg' },
-  { id: 'banga', name: 'Banga', category: 'Food', price: 2000, available: true, image: 'Banga.jpg' },
+  { id: 'banga', name: 'Banga', category: 'Food', price: 1800, available: true, image: 'Banga.jpg' },
   { id: 'beans', name: 'Beans', category: 'Food', price: 1800, available: true, image: 'Beans.jpg' },
   { id: 'chapman', name: 'Chapman', category: 'Drinks', price: 800, available: true, image: 'Chapman.jpg' },
   { id: 'zobo', name: 'Zobo', category: 'Drinks', price: 600, available: true, image: 'Zobo.jpg' },
   { id: 'bottled-water', name: 'Bottled Water', category: 'Drinks', price: 500, available: true, image: 'Water.jpg' },
-  { id: 'pineapple-juice', name: 'Pineapple Juice', category: 'Drinks', price: 1600, available: true, image: 'Piineapple-juice.jpg' },
-  { id: 'orange-juice', name: 'Orange Juice', category: 'Drinks', price: 1500, available: true, image: 'Orange.jpg' },
-  { id: 'apple-juice', name: 'Apple Juice', category: 'Drinks', price: 1600, available: true, image: 'Apple-juice.jpg' },
-  { id: 'tiger-nut', name: 'Tiger Nut', category: 'Drinks', price: 600, available: true, image: 'Tigernut.jpg' },
-  { id: 'kunu', name: 'Kunu', category: 'Drinks', price: 600, available: true, image: 'Kunu.jpg' },
-  { id: 'meat-pie', name: 'Meat Pie', category: 'Snacks', price: 800, available: true, image: 'Meatpie.jpg' },
-  { id: 'doughnut', name: 'Doughnut', category: 'Snacks', price: 600, available: true, image: 'Doughnut.jpg' },
-  { id: 'croissant', name: 'Croissant', category: 'Snacks', price: 600, available: true, image: 'Croissant.jpg' },
-  { id: 'chocolate-cupcake', name: 'Chocolate Cupcake', category: 'Snacks', price: 3000, available: true, image: 'Chocolate.jpg' },
-  { id: 'red-velvet', name: 'Red Velvet', category: 'Snacks', price: 3000, available: true, image: 'Red-velvet.jpg' },
-  { id: 'vanilla-cake', name: 'Vanilla cake', category: 'Snacks', price: 3000, available: true, image: 'Vanilla.jpg' },
-  { id: 'fish-roll', name: 'Fish Roll', category: 'Snacks', price: 600, available: true, image: 'Fish-roll.jpg' },
-  { id: 'shawarma', name: 'Shawarma', category: 'Snacks', price: 3000, available: true, image: 'Shawarma.jpg' },
+  { id: 'pineapple-juice', name: 'Pineapple Juice', category: 'Drinks', price: 500, available: true, image: 'Piineapple-juice.jpg' },
+  { id: 'orange-juice', name: 'Orange Juice', category: 'Drinks', price: 500, available: true, image: 'Orange.jpg' },
+  { id: 'apple-juice', name: 'Apple Juice', category: 'Drinks', price: 500, available: true, image: 'Apple-juice.jpg' },
+  { id: 'tiger-nut', name: 'Tiger Nut', category: 'Drinks', price: 500, available: true, image: 'Tigernut.jpg' },
+  { id: 'kunu', name: 'Kunu', category: 'Drinks', price: 500, available: true, image: 'Kunu.jpg' },
+  { id: 'meat-pie', name: 'Meat Pie', category: 'Snacks', price: 500, available: true, image: 'Meatpie.jpg' },
+  { id: 'doughnut', name: 'Doughnut', category: 'Snacks', price: 500, available: true, image: 'Doughnut.jpg' },
+  { id: 'croissant', name: 'Croissant', category: 'Snacks', price: 500, available: true, image: 'Croissant.jpg' },
+  { id: 'chocolate-cupcake', name: 'Chocolate Cupcake', category: 'Snacks', price: 500, available: true, image: 'Chocolate.jpg' },
+  { id: 'red-velvet', name: 'Red Velvet', category: 'Snacks', price: 500, available: true, image: 'Red-velvet.jpg' },
+  { id: 'vanilla-cake', name: 'Vanilla cake', category: 'Snacks', price: 500, available: true, image: 'Vanilla.jpg' },
+  { id: 'fish-roll', name: 'Fish Roll', category: 'Snacks', price: 500, available: true, image: 'Fish-roll.jpg' },
+  { id: 'shawarma', name: 'Shawarma', category: 'Snacks', price: 500, available: true, image: 'Shawarma.jpg' },
 ];
 
 export function getMenu() {
@@ -169,6 +175,7 @@ export function createOrder({ recipient, phone, address, notes, paymentMethod })
   const subtotal = cartSubtotal();
   const order = {
     id: String(Date.now()).slice(-6),
+    customerEmail: getUser().email || null,
     items,
     subtotal,
     deliveryFee: DELIVERY_FEE,
@@ -185,6 +192,12 @@ export function createOrder({ recipient, phone, address, notes, paymentMethod })
   clearCart();
   return order;
 }
+export function getOrdersByCustomer(email) {
+  return getOrders().filter((o) => o.customerEmail === email);
+}
+export function getOrdersByRider(riderId) {
+  return getOrders().filter((o) => o.riderId === riderId);
+}
 export function updateOrderStatus(orderId, status) {
   const orders = getOrders();
   const order = orders.find(o => o.id === orderId);
@@ -196,6 +209,13 @@ export function assignRider(orderId, riderId) {
   const orders = getOrders();
   const order = orders.find(o => o.id === orderId);
   if (order) order.riderId = riderId;
+  write(KEYS.orders, orders);
+  return order;
+}
+export function confirmPayment(orderId) {
+  const orders = getOrders();
+  const order = orders.find(o => o.id === orderId);
+  if (order) order.paymentStatus = 'paid';
   write(KEYS.orders, orders);
   return order;
 }

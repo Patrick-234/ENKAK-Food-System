@@ -19,11 +19,12 @@ const addressInput = document.getElementById('address');
 
 // Strip any character not allowed for that field, as the user types,
 // and show that field's own error message while it's happening.
-function restrictInput(el, regex, errorId) {
+function restrictInput(el, regex, errorId, maxLen) {
   const errorEl = document.getElementById(errorId);
   let hideTimer;
   el.addEventListener('input', () => {
-    const cleaned = el.value.replace(regex, '');
+    let cleaned = el.value.replace(regex, '');
+    if (maxLen) cleaned = cleaned.slice(0, maxLen);
     if (cleaned !== el.value) {
       el.value = cleaned;
       errorEl.classList.remove('hidden');
@@ -32,9 +33,9 @@ function restrictInput(el, regex, errorId) {
     }
   });
 }
-restrictInput(recipientInput, /[^a-zA-Z\s']/g, 'recipient-error'); // letters, spaces, apostrophe only
-restrictInput(phoneInput, /[^0-9]/g, 'phone-error');                // digits only
-restrictInput(addressInput, /[^a-zA-Z0-9\s,]/g, 'address-error');  // letters, numbers, spaces, comma only
+restrictInput(recipientInput, /[^a-zA-Z\s']/g, 'recipient-error');       // letters, spaces, apostrophe only
+restrictInput(phoneInput, /[^0-9]/g, 'phone-error', 11);                 // digits only, 11 max
+restrictInput(addressInput, /[^a-zA-Z0-9\s,]/g, 'address-error');       // letters, numbers, spaces, comma only
 
 const payButtons = document.querySelectorAll('.pay-method-btn');
 let selectedMethod = 'card';
@@ -94,6 +95,11 @@ placeOrderBtn.addEventListener('click', async () => {
   }
   if (!recipient || !phone || !address) {
     errorBox.textContent = 'Please fill in recipient name, phone number, and delivery address.';
+    errorBox.classList.remove('hidden');
+    return;
+  }
+  if (phone.length !== 11) {
+    errorBox.textContent = 'Phone number must be exactly 11 digits.';
     errorBox.classList.remove('hidden');
     return;
   }
