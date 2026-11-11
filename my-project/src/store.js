@@ -115,6 +115,13 @@ export function addMenuItem(item) {
   saveMenu(items);
   return items;
 }
+export function updateMenuItem(itemId, changes) {
+  const items = getMenu();
+  const item = items.find((i) => i.id === itemId);
+  if (item) Object.assign(item, changes);
+  saveMenu(items);
+  return items;
+}
 export function deleteMenuItem(itemId) {
   const items = getMenu().filter(i => i.id !== itemId);
   saveMenu(items);

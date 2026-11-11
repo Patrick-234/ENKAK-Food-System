@@ -2,7 +2,7 @@
 import { getCart, updateCartQty, removeFromCart, cartSubtotal, clearCart, cartCount } from './store.js';
 
 const DELIVERY_FEE = 500;
-const THUMBS_PATH = './Thumbnails/';
+const THUMBS_PATH = '/Thumbnails/';
 
 const itemsBox = document.getElementById('cart-items');
 const emptyMsg = document.getElementById('cart-empty');
