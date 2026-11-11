@@ -15,7 +15,6 @@ export default defineConfig({
         review: resolve(__dirname, 'review.html'),
         account: resolve(__dirname, 'User-account.html'),
         adminDashboard: resolve(__dirname, 'admin-dashboard.html'),
-        adminMenu: resolve(__dirname, 'admin-menu.html'),
         riderDashboard: resolve(__dirname, 'rider-dashboard.html'),
       }
     }
