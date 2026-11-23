@@ -14,6 +14,10 @@ export default defineConfig({
         trackOrder: resolve(__dirname, 'track-order.html'),
         review: resolve(__dirname, 'review.html'),
         account: resolve(__dirname, 'User-account.html'),
+        about: resolve(__dirname, 'about.html'),
+        contact: resolve(__dirname, 'contact.html'),
+        terms: resolve(__dirname, 'terms.html'),
+        privacy: resolve(__dirname, 'privacy.html'),
         adminDashboard: resolve(__dirname, 'admin-dashboard.html'),
         riderDashboard: resolve(__dirname, 'rider-dashboard.html'),
       }

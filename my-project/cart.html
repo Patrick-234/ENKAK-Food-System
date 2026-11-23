@@ -9,13 +9,14 @@
   <script type="module" src="/src/cart.js" defer></script>
 </head>
 
-<body class="bg-[#F3EDE2] text-[#2B2320] overflow-x-hidden" style="font-family: Arial, 'Times New Roman', serif;">
+<body class="bg-[#F3EDE2] text-[#2B2320] overflow-x-hidden" style="font-family: Arial, 'Times New Roman',">
 
   <header class="flex items-center justify-between px-4 sm:px-6 md:px-10 py-4 sm:py-5 border-b border-[#D8C9B4]">
     <div class="text-[22px] sm:text-[26px] font-bold tracking-tight">ENkak</div>
     <div class="flex gap-4 items-center">
       <div class="flex justify-end">
-        <button type="button" id="clear-cart-btn" class="text-[13px] text-[#F3EDE2] bg-[#B4502A] bg-none border border-[#E3BDB4] px-3.5 py-2 md:px-4 md:py-2.5 rounded-full cursor-pointer transition-all duration-150 hover:opacity-80 ">Clear Cart</button>
+        <button type="button" id="clear-cart-btn" class="text-[13px] text-[#F3EDE2] bg-[#B4502A] bg-none border border-[#E3BDB4] px-3.5 py-2 md:px-4 md:py-2.5 rounded-full cursor-pointer transition-all duration-150 hover:opacity-80 ">Clear Cart
+        </button>
       </div>
 
       <button type="button"
@@ -46,7 +47,7 @@
       <h2 class="text-base font-bold mb-3.5">Order Summary</h2>
       <div class="font-sans flex flex-col gap-2.5 text-sm">
         <div class="flex justify-between text-[#5C5248]"><span>Subtotal</span><span id="cart-subtotal">₦0</span></div>
-        <div class="flex justify-between text-[#5C5248]"><span>Delivery fee</span><span id="cart-delivery">₦500</span></div>
+        <div class="flex justify-between text-[#5C5248]"><span>Delivery fee</span><span id="cart-delivery">₦700</span></div>
         <div class="h-px bg-[#D8C9B4] my-1"></div>
         <div class="flex justify-between font-bold text-base"><span>Total</span><span id="cart-total">₦0</span></div>
       </div>
@@ -57,6 +58,61 @@
     </aside>
 
   </main>
+
+  <footer class="bg-[#B4502A] text-[#F3EDE2] mt-50" style="font-family: Arial, 'Times New Roman';">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-10 pt-10 pb-6 grid gap-8 grid-cols-1 sm:grid-cols-3">
+
+      <div>
+        <div class="text-xl font-bold mb-2">ENkak</div>
+        <p class="font-sans text-sm text-[#C9BDAE] leading-relaxed">
+          Order meals, snacks and drinks, and track every delivery in real time.
+        </p>
+      </div>
+
+      <nav aria-label="Quick links" class="font-sans">
+        <h3 class="text-sm font-bold uppercase tracking-wide mb-3 text-[#C9BDAE]">Quick Links</h3>
+        <ul class="list-none m-0 p-0 flex flex-col gap-2 text-sm">
+          <li><a href="/about.html"
+              class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">About Us</a>
+          </li>
+          <li><a href="/contact.html"
+              class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">Contact</a></li>
+          <li><a href="/" class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">Log In /
+              Sign Up</a></li>
+      <!--<li><a href="/menu.html"
+              class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">Menu</a>
+          </li> -->
+        </ul>
+      </nav>
+
+      <nav aria-label="Legal" class="font-sans">
+        <h3 class="text-sm font-bold uppercase tracking-wide mb-3 text-[#C9BDAE]">Legal</h3>
+        <ul class="list-none m-0 p-0 flex flex-col gap-2 text-sm">
+          <li><a href="/terms.html"
+              class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">Terms &amp;
+              Conditions</a></li>
+          <li><a href="/privacy.html"
+              class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">Privacy Policy</a>
+          </li>
+          <li><a href="/complaints.html"
+              class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">Feedback &amp;
+              Support</a>
+          </li>
+        </ul>
+      </nav>
+
+      </p>
+
+    </div>
+
+    <div class="border-t border-[#4A3E35] px-4 sm:px-6 md:px-10 py-4">
+      <p class="pb-4   font-sans text-xs text-[#C9BDAE] text-center sm:text-left">
+        ENkak. An Aksu IT Defense project made by PATRICK GODSWILL AKANINYENE, a student of the prestigious department
+        of Computer Science, Faculty of Computing and Information Technology.
+      </p>
+      <p class="font-sans text-xs text-[#C9BDAE] text-center sm:text-left">© 2026 ENkak. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 

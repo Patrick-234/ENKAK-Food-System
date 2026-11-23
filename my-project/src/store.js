@@ -64,7 +64,7 @@ export const ROLE_REDIRECT = {
   admin: '/admin-dashboard.html',
 };
 
-// ---- Menu ----
+// Menu
 const DEFAULT_MENU = [
   { id: 'fried-rice', name: 'Fried Rice', category: 'Food', price: 1500, available: true, image: 'Fried-rice.jpg' },
   { id: 'roasted-chicken', name: 'Roasted Chicken', category: 'Food', price: 2200, available: true, image: 'Grilled-chicken.jpg' },
@@ -81,19 +81,19 @@ const DEFAULT_MENU = [
   { id: 'chapman', name: 'Chapman', category: 'Drinks', price: 800, available: true, image: 'Chapman.jpg' },
   { id: 'zobo', name: 'Zobo', category: 'Drinks', price: 600, available: true, image: 'Zobo.jpg' },
   { id: 'bottled-water', name: 'Bottled Water', category: 'Drinks', price: 500, available: true, image: 'Water.jpg' },
-  { id: 'pineapple-juice', name: 'Pineapple Juice', category: 'Drinks', price: 500, available: true, image: 'Piineapple-juice.jpg' },
-  { id: 'orange-juice', name: 'Orange Juice', category: 'Drinks', price: 500, available: true, image: 'Orange.jpg' },
-  { id: 'apple-juice', name: 'Apple Juice', category: 'Drinks', price: 500, available: true, image: 'Apple-juice.jpg' },
-  { id: 'tiger-nut', name: 'Tiger Nut', category: 'Drinks', price: 500, available: true, image: 'Tigernut.jpg' },
-  { id: 'kunu', name: 'Kunu', category: 'Drinks', price: 500, available: true, image: 'Kunu.jpg' },
-  { id: 'meat-pie', name: 'Meat Pie', category: 'Snacks', price: 500, available: true, image: 'Meatpie.jpg' },
-  { id: 'doughnut', name: 'Doughnut', category: 'Snacks', price: 500, available: true, image: 'Doughnut.jpg' },
-  { id: 'croissant', name: 'Croissant', category: 'Snacks', price: 500, available: true, image: 'Croissant.jpg' },
-  { id: 'chocolate-cupcake', name: 'Chocolate Cupcake', category: 'Snacks', price: 500, available: true, image: 'Chocolate.jpg' },
-  { id: 'red-velvet', name: 'Red Velvet', category: 'Snacks', price: 500, available: true, image: 'Red-velvet.jpg' },
-  { id: 'vanilla-cake', name: 'Vanilla cake', category: 'Snacks', price: 500, available: true, image: 'Vanilla.jpg' },
-  { id: 'fish-roll', name: 'Fish Roll', category: 'Snacks', price: 500, available: true, image: 'Fish-roll.jpg' },
-  { id: 'shawarma', name: 'Shawarma', category: 'Snacks', price: 500, available: true, image: 'Shawarma.jpg' },
+  { id: 'pineapple-juice', name: 'Pineapple Juice', category: 'Drinks', price: 2000, available: true, image: 'Piineapple-juice.jpg' },
+  { id: 'orange-juice', name: 'Orange Juice', category: 'Drinks', price: 2000, available: true, image: 'Orange.jpg' },
+  { id: 'apple-juice', name: 'Apple Juice', category: 'Drinks', price: 2000, available: true, image: 'Apple-juice.jpg' },
+  { id: 'tiger-nut', name: 'Tiger Nut', category: 'Drinks', price: 1000, available: true, image: 'Tigernut.jpg' },
+  { id: 'kunu', name: 'Kunu', category: 'Drinks', price: 600, available: true, image: 'Kunu.jpg' },
+  { id: 'meat-pie', name: 'Meat Pie', category: 'Snacks', price: 600, available: true, image: 'Meatpie.jpg' },
+  { id: 'doughnut', name: 'Doughnut', category: 'Snacks', price: 600, available: true, image: 'Doughnut.jpg' },
+  { id: 'croissant', name: 'Croissant', category: 'Snacks', price: 800, available: true, image: 'Croissant.jpg' },
+  { id: 'chocolate-cupcake', name: 'Chocolate Cupcake', category: 'Snacks', price: 1200, available: true, image: 'Chocolate.jpg' },
+  { id: 'red-velvet', name: 'Red Velvet', category: 'Snacks', price: 1200, available: true, image: 'Red-velvet.jpg' },
+  { id: 'vanilla-cake', name: 'Vanilla cake', category: 'Snacks', price: 1200, available: true, image: 'Vanilla.jpg' },
+  { id: 'fish-roll', name: 'Fish Roll', category: 'Snacks', price: 800, available: true, image: 'Fish-roll.jpg' },
+  { id: 'shawarma', name: 'Shawarma', category: 'Snacks', price: 2500, available: true, image: 'Shawarma.jpg' },
 ];
 
 export function getMenu() {
@@ -128,7 +128,7 @@ export function deleteMenuItem(itemId) {
   return items;
 }
 
-// ---- Cart ----
+// Cart
 export function getCart() {
   return read(KEYS.cart, []); // [{ id, name, price, qty }]
 }
@@ -167,8 +167,8 @@ export function cartSubtotal() {
   return getCart().reduce((sum, c) => sum + c.qty * c.price, 0);
 }
 
-// ---- Orders ----
-const DELIVERY_FEE = 500;
+// Orders
+const DELIVERY_FEE = 700;
 const STAGES = ['confirmed', 'preparing', 'out_for_delivery', 'delivered'];
 
 export function getOrders() {

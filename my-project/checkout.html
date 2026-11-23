@@ -12,7 +12,7 @@
 <body class="bg-[#F3EDE2] text-[#2B2320] overflow-x-hidden" style="font-family: Arial, 'Times New Roman',">
 
   <header class="flex items-center justify-between px-4 sm:px-6 md:px-10 py-4 sm:py-5 border-b border-[#D8C9B4]">
-    <div class="text-[22px] sm:text-[26px] font-bold tracking-normal">ENkak</div>
+    <div class="text-[22px] sm:text-[26px] font-bold tracking-tight">ENkak</div>
     <div class=" text-sm text-[#8A7D6E]">Checkout</div>
   </header>
 
@@ -25,7 +25,7 @@
         <form class="font-sans flex flex-col gap-3">
           <div class="flex flex-col gap-1.5">
             <label for="recipient" class="text-xs text-[#8A7D6E]">Recipient name</label>
-            <input id="recipient" type="text" placeholder="Ada Lovelace"
+            <input id="recipient" type="text" placeholder="Patrick Godswill"
               class="w-full box-border px-3.5 py-2.5 rounded-lg border border-[#D8C9B4] text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#B4502A]">
             <p id="recipient-error" class="hidden text-xs text-[#A33B2B]">Only letters, spaces and apostrophes are
               allowed.
@@ -46,7 +46,7 @@
           </div>
           <div class="flex flex-col gap-1.5">
             <label for="notes" class="text-xs text-[#8A7D6E]">Delivery notes (optional)</label>
-            <input id="notes" type="text" placeholder="e.g. Gate code, landmark"
+            <input id="notes" type="text" placeholder="e.g. Estate code, Gate code, landmark"
               class="w-full box-border px-3.5 py-2.5 rounded-lg border border-[#D8C9B4] text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#B4502A]">
           </div>
         </form>
@@ -100,12 +100,12 @@
 
   </main>
 
-  <!-- Success popup: shown only when payment succeeds -->
+  <!-- Order success popup which shows only when order goes through and is successful-->
   <div id="order-success-modal" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center p-4 z-50">
     <div class="font-sans bg-white rounded-2xl p-7 max-w-[340px] w-full text-center flex flex-col items-center gap-3">
-      <div class="w-12 h-12 rounded-full bg-[#E6F2E9] flex items-center justify-center text-2xl text-[#2F6B4F]">✓</div>
+      <div class="w-12 h-12 rounded-full bg-[#E6F2E9] flex items-center justify-center text-2xl text-[#2F6B4F]">&check;</div>
       <h2 class="text-lg font-bold">Order Successful!</h2>
-      <p class="text-sm text-[#8A7D6E]">Your payment went through and your order has been placed.</p>
+      <p class="text-sm text-[#8A7D6E]">Your payment was successful and your order has been placed.</p>
       <button type="button" id="view-order-btn"
         class="w-full mt-2 bg-[#B4502A] text-[#F3EDE2] border-none py-3 rounded-lg text-sm font-semibold cursor-pointer transition-opacity duration-150 hover:opacity-85">
         Track My Order
@@ -116,6 +116,61 @@
       </button>
     </div>
   </div>
+
+    <footer class="bg-[#B4502A] text-[#F3EDE2] mt-50" style="font-family: Arial, 'Times New Roman';">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-10 pt-10 pb-6 grid gap-8 grid-cols-1 sm:grid-cols-3">
+
+      <div>
+        <div class="text-xl font-bold mb-2">ENkak</div>
+        <p class="font-sans text-sm text-[#C9BDAE] leading-relaxed">
+          Order meals, snacks and drinks, and track every delivery in real time.
+        </p>
+      </div>
+
+      <nav aria-label="Quick links" class="font-sans">
+        <h3 class="text-sm font-bold uppercase tracking-wide mb-3 text-[#C9BDAE]">Quick Links</h3>
+        <ul class="list-none m-0 p-0 flex flex-col gap-2 text-sm">
+          <li><a href="/about.html"
+              class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">About Us</a>
+          </li>
+          <li><a href="/contact.html"
+              class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">Contact</a></li>
+          <li><a href="/" class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">Log In /
+              Sign Up</a></li>
+          <!-- <li><a href="/menu.html"
+              class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">Menu</a></li> -->
+        </ul>
+      </nav>
+
+      <nav aria-label="Legal" class="font-sans">
+        <h3 class="text-sm font-bold uppercase tracking-wide mb-3 text-[#C9BDAE]">Legal</h3>
+        <ul class="list-none m-0 p-0 flex flex-col gap-2 text-sm">
+          <li><a href="/terms.html"
+              class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">Terms &amp;
+              Conditions</a></li>
+          <li><a href="/privacy.html"
+              class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">Privacy Policy</a>
+          </li>
+          <li><a href="/complaints.html"
+              class="text-[#F3EDE2] no-underline transition-opacity duration-150 hover:opacity-70">Feedback &amp;
+              Support</a>
+          </li>
+        </ul>
+      </nav>
+
+      </p>
+
+    </div>
+
+    <div class="border-t border-[#4A3E35] px-4 sm:px-6 md:px-10 py-4">
+      <p class="pb-4   font-sans text-xs text-[#C9BDAE] text-center sm:text-left">
+        ENkak. An Aksu IT Defense project made by PATRICK GODSWILL AKANINYENE, a student of the prestigious department
+        of Computer Science, Faculty of Computing and Information Technology.
+      </p>
+      <p class="font-sans text-xs text-[#C9BDAE] text-center sm:text-left">© 2026 ENkak. All rights reserved.</p>
+    </div>
+  </footer>
+
 
 </body>
 
