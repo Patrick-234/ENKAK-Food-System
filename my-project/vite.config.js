@@ -18,6 +18,7 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact.html'),
         terms: resolve(__dirname, 'terms.html'),
         privacy: resolve(__dirname, 'privacy.html'),
+        support: resolve(__dirname, 'support.html'),
         adminDashboard: resolve(__dirname, 'admin-dashboard.html'),
         riderDashboard: resolve(__dirname, 'rider-dashboard.html'),
       }
